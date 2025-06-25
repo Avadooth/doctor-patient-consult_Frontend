@@ -36,7 +36,7 @@ const PatientLogin = () => {
 
         try {
             setLoading(true);
-            const res = await axios.post('/api/auth/patient/login', { email, password });
+            const res = await axios.post('https://doctor-patient-consult-backend.onrender.com/api/auth/patient/login', { email, password });
 
             // Save token and navigate
             login(res.data.token, 'patient');

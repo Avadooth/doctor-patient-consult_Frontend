@@ -9,7 +9,7 @@ const PrescriptionList = () => {
   const [existing, setExisting] = useState(null);
 
   useEffect(() => {
-    axios.get(`/api/prescriptions/doctor/${localStorage.getItem('doctorId')}`, {
+    axios.get(`https://doctor-patient-consult-backend.onrender.com/api/prescriptions/doctor/${localStorage.getItem('doctorId')}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
     .then(res => {
@@ -34,11 +34,11 @@ const PrescriptionList = () => {
       };
 
       if (existing) {
-        await axios.put(`/api/prescriptions/${existing._id}`, payload, {
+        await axios.put(`https://doctor-patient-consult-backend.onrender.com/api/prescriptions/${existing._id}`, payload, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
       } else {
-        await axios.post('/api/prescriptions', payload, {
+        await axios.post('https://doctor-patient-consult-backend.onrender.com/api/prescriptions', payload, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
       }

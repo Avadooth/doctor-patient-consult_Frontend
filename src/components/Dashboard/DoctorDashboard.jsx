@@ -6,7 +6,7 @@ const DoctorDashboard = () => {
   const doctorId = localStorage.getItem('doctorId'); // or decode JWT
 
   useEffect(() => {
-    axios.get(`/api/consults/doctor/${doctorId}`, {
+    axios.get(`https://doctor-patient-consult-backend.onrender.com/api/consults/doctor/${doctorId}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
     .then(res => setConsults(res.data))

@@ -52,7 +52,7 @@ const ConsultFormWizard = () => {
     };
 
     try {
-      await axios.post('/api/consults', payload, {
+      await axios.post('https://doctor-patient-consult-backend.onrender.com/api/consults', payload, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       alert('Consultation submitted successfully!');

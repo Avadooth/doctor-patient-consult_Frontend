@@ -52,7 +52,7 @@ const PatientSignup = () => {
 
     try {
       setLoading(true);
-      await axios.post('/api/auth/patient/signup', formData, {
+      await axios.post('https://doctor-patient-consult-backend.onrender.com/api/auth/patient/signup', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
